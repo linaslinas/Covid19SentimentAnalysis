@@ -34,6 +34,12 @@ python3 senti_analysis.py China.txt
 python3 senti_analysis.py USA.txt
 ```
 
+#### Note:
+<p> To install python packages, run the following command: <p>
+
+```
+pip3 install [package name]
+```
 ### Results:
 <p> Through clustering the countries into high, moderate, low risk levels, it seems that USA is the only country that is categorized in the high risk group. China is one of the countries of moderate risk for COVID19. Canada is one of the many countries that have a low risk of COVID19. <p>
   
