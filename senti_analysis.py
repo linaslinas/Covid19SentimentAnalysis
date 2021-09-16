@@ -26,6 +26,7 @@ def remove_url(x):
 	replace_url = url_pattern.sub(r'', str(x))
 	return replace_url
 
+
 def remove_usernames(input_txt, pattern):
     r = re.findall(pattern, input_txt)
     for i in r:
@@ -59,6 +60,12 @@ def sentiment_scores(sentence):
   
     else : 
         return "Neutral"
+
+
+# String matching to obtain the country of the data file: (Canada.txt, China.txt, USA.txt)
+def get_input_file_name(filename):
+	country_name = re.search('(?P<name>.*)\.txt$', filename).group('name')
+	return country_name
 
 
 filename = sys.argv[1]
@@ -122,13 +129,14 @@ neutral_sent_percent = len(neutral_sentiments)/total_sentences
 print("Percentage of neutral sentiments: ", neutral_sent_percent)
 
 
-# Plot the results
+# Bar graph showing the amount of positive, negative, and neutral sentiments
 label = ['Positive', 'Neutral', 'Negative']
 sentiment_percentages = [positive_sent_percent*100, negative_sent_percent*100, negative_sent_percent*100]
 index = np.arange(len(label))
 plt.bar(index, sentiment_percentages)
 plt.xlabel('Sentiment Groups', fontsize=10)
-plt.ylabel('Sentiment Percentages', fontsize=10)
+plt.ylabel('Sentiment Percentages (%)', fontsize=10)
 plt.xticks(index, label, fontsize=10, rotation=30)
-plt.title('Sentiment Groups and Their Corresponding Percentages')
+country_name = get_input_file_name(filename)
+plt.title(country_name + ' Sentiments')
 plt.show()
