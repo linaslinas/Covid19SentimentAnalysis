@@ -1,5 +1,3 @@
-# Reference: https://www.youtube.com/watch?v=WSTob0j3I3E&feature=youtu.be
-
 from tweepy.streaming import StreamListener
 from tweepy import Stream
 from tweepy import OAuthHandler
