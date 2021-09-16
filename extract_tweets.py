@@ -8,6 +8,7 @@ import json
 import csv
 import traceback
 
+# PLEASE INPUT PERSONAL API KEY INFORMATION
 consumer_key = "INSERT CONSUMER KEY HERE"
 consumer_secret_key = "INSERT CONSUMER SECRET KEY HERE"
 access_token = "INSERT ACCESS TOKEN HERE"
