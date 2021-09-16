@@ -8,10 +8,10 @@ import json
 import csv
 import traceback
 
-consumer_key = "UGGE1vG4ZomvH976bJfFPOYWS"
-consumer_secret_key = "TtaSzLKWdh4eoY2o7EZSw0iGHycHzo8XulvQfoeXrCleXoSPwR"
-access_token = "1263719683607285762-3LBpajGEjhjzO7gjaNNcCRjUL8SAk1"
-access_token_secret = "K1Px9ib8OUjxR4fy25MKkxOkSiNYFJStidU2pBtebw84Q"
+consumer_key = "INSERT CONSUMER KEY HERE"
+consumer_secret_key = "INSERT CONSUMER SECRET KEY HERE"
+access_token = "INSERT ACCESS TOKEN HERE"
+access_token_secret = "INSERT ACCESS SECRET TOKEN HERE"
 
 # List of words to search for
 search_list = ['COVID Canada', 'coronavirus Canada', 'covid Trudeau', 'coronavirus Trudeau' 'Ontario covid', 'coronavirus Ontario']
@@ -42,9 +42,13 @@ class StdOutListener(StreamListener):
 				tweet_txt = pattern1.sub(r'', tweet_data['text'])
 				pattern2 = re.compile(r'RT')
 				tweet = pattern2.sub(r'', tweet_txt)
-				# f = open("/home/lina/Desktop/Covid19_Sentiment_Analysis/Data/China.txt", "a+")
-				# f = open("/home/lina/Desktop/Covid19_Sentiment_Analysis/Data/USA.txt", "a+")
-				f = open("/home/lina/Desktop/Covid19_Sentiment_Analysis/Data/CANADA.txt", "a+")
+				
+				# PLEASE CHANGE THE PATH TO YOUR DESIRED FILE FOLDER.
+				# This is where the extracted tweets will go.
+				# f = open("/home/Desktop/Covid19_Sentiment_Analysis/Data/China.txt", "a+")
+				# f = open("/home/Desktop/Covid19_Sentiment_Analysis/Data/USA.txt", "a+")
+				f = open("/home/Desktop/Covid19_Sentiment_Analysis/Data/CANADA.txt", "a+")
+				
 				if not tweet_data['text'].startswith('RT'):
 					f.write(str(tweet_data['id']) + "\t" + tweet + "\n")
 					tweet_count+=1
